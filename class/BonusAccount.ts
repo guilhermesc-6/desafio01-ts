@@ -1,15 +1,15 @@
 import { DioAccount } from "./DioAccount";
 
-export class CompanyAccount extends DioAccount {
+export class BonusAccount extends DioAccount {
   constructor(name: string, accountNumber: number) {
     super(name, accountNumber);
   }
 
-  getLoan = (valor: number): void => {
+  deposit = (valor: number): void => {
     if (this.validateStatus()) {
+      valor += 10;
       this.balance += valor;
-      return console.log("Empréstimo realizado");
+      return console.log("Depósito realizado com sucesso");
     }
-    return console.log("Não foi possível realizar o empréstimo");
   };
 }
